@@ -15,9 +15,9 @@ describe("Employee", () => {
         expect(employee.name).toBe(name);
     });
     // should return id
-    it("should return the name", () => {
+    it("should return the id number", () => {
 
-        const id = 227508;
+        const id = "227508";
         const employee = new Employee(id);
         expect(employee.id).toBe(id);
 
