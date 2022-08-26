@@ -17,16 +17,19 @@ describe("Employee", () => {
     // should return id
     it("should return the id number", () => {
 
+        const name = "Kevin"
         const id = "227508";
-        const employee = new Employee(id);
+        const employee = new Employee(name, id);
         expect(employee.id).toBe(id);
 
     });
     // should return email
     it("should return the email", () => {
 
+        const name = "Kevin"
+        const id = "227508";
         const email = "kevin.logan@workplace.com";
-        const employee = new Employee(email);
+        const employee = new Employee(name, id, email);
         expect(employee.email).toBe(email);
     });
 

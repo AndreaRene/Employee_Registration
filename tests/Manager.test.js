@@ -6,9 +6,12 @@ describe("Manager", () => {
 
     it("should return the office number", () => {
 
-        const office = 211;
-        const manager = new Manager(office);
-        expect(manager.office).toBe(office);
+        const name = "Kevin"
+        const id = "227508";
+        const email = "kevin.logan@workplace.com";
+        const officeNumber = "211";
+        const manager = new Manager(name, id, email, officeNumber);
+        expect(manager.officeNumber).toBe(officeNumber);
     });
 
     // test getOffice
