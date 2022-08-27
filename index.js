@@ -1,23 +1,18 @@
 // TODO: Smile. You are enough.
 const { writeFile } = require('fs').promises;
 const inquirer = require("inquirer");
+const chalk = require("chalk");
 const Manager = require("./lib/Manager");
 const Engineer = require("./lib/Engineer");
 const Intern = require("./lib/Intern");
-const generateHTML = require("./src/generateHTML")
-
-//global
-const teamMembers = []
+const generateHTML = require("./src/generateHTML");
+const teamMembers = [];
 
 
-
-// inside .then in inquirer
-// const team = new Manager(data.name, data.id, data.email, data.office)
-//teamMembers.push(team)
 
 const employeeQuestions = (selectData) => {
     if (teamMembers.length === 0) {
-        console.log("Please enter information about your team members below starting with the manager.");
+        console.log(("Please enter information about your team members below") + chalk.green(" starting with the manager."));
     };
 
     inquirer.prompt([
@@ -59,7 +54,7 @@ const managerQuestions = (employeeData) => {
         manager.role = manager.getRole();
         teamMembers.push(manager);
         select();
-    })
+    });
 };
 
 const engineerQuestions = (employeeData) => {
@@ -105,7 +100,7 @@ const select = () => {
         } else {
             const newHTML = generateHTML(teamMembers);
             createFile(newHTML);
-            console.log(teamMembers);
+            console.log(teamMembers, "From INDEX Queries");
         };
     });
 };
@@ -115,5 +110,4 @@ const createFile = (newHTML) => {
 }
 
 employeeQuestions();
-// look up .filter
 
