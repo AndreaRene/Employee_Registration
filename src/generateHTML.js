@@ -11,15 +11,14 @@ function getProp(employee) {
 };
 
 function cardLoop(teamMembers) {
-    var temp;
+    var temp = "";
     for (const employee of teamMembers) {
-        temp = generateCards(employee);
+        temp += generateCards(employee);
     };
     return temp;
 };
 
 function generateCards(employee) {
-    // console.log(employee, "from GENERATECARDS");
     return `<div class="card">
         <header class="cardHeader">
             <h2>${employee.name}</h2>
