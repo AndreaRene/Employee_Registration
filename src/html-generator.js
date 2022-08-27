@@ -1,4 +1,6 @@
-`<!DOCTYPE html>
+const Queries = require("../lib/queries")
+
+    `<!DOCTYPE html>
 <html lang="en">
 
 <head>

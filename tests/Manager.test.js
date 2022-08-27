@@ -17,3 +17,4 @@ describe("Manager", () => {
     // test getOffice
     // test getRole
 });
+

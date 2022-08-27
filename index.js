@@ -1,2 +1,2 @@
-const queries = require("./lib/queries");
+const Queries = require("./lib/queries");
 
