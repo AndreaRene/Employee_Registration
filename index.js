@@ -56,6 +56,7 @@ const managerQuestions = (employeeData) => {
         },
     ]).then((managerData) => {
         const manager = new Manager(employeeData.name, employeeData.EID, employeeData.email, managerData.managerOffice);
+        manager.role = manager.getRole();
         teamMembers.push(manager);
         select();
     })
@@ -70,6 +71,7 @@ const engineerQuestions = (employeeData) => {
         },
     ]).then((engineerData) => {
         const engineer = new Engineer(employeeData.name, employeeData.EID, employeeData.email, engineerData.github);
+        engineer.role = engineer.getRole();
         teamMembers.push(engineer);
         select();
     });
@@ -84,6 +86,7 @@ const internQuestions = (employeeData) => {
         },
     ]).then((internData) => {
         const intern = new Intern(employeeData.name, employeeData.EID, employeeData.email, internData.school);
+        intern.role = intern.getRole();
         teamMembers.push(intern);
         select();
     });
