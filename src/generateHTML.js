@@ -11,6 +11,7 @@ function getProp(employee) {
 
 function generateCards(teamMembers) {
     for (const employee of teamMembers) {
+        console.log(employee);
         return `<div class="card">
         <header class="cardHeader">
             <h2>${employee.name}</h2>
@@ -27,6 +28,7 @@ function generateCards(teamMembers) {
 
 
 function generateHTML(teamMembers) {
+    console.log(teamMembers);
     return `<!DOCTYPE html>
         <html lang="en">
 
@@ -36,12 +38,12 @@ function generateHTML(teamMembers) {
                         <meta name="viewport" content="width=device-width, initial-scale=1.0">
                             <link rel="stylesheet" src="/dist/reset.css">
                                 <link rel="stylesheet" src="/dist/style.css">
-                                    <title>Document</title>
+                                    <title>${manager.name}'s Team</title>
                                 </head>
 
                                 <body>
                                     <header id="pageHeader">
-
+                                        <h1>${manager.name}'s Team</h1>
                                     </header>
                                     <main id="pageMain">
                                         <section id="cards">
