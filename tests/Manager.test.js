@@ -15,6 +15,12 @@ describe("Manager", () => {
     });
 
     // test getOffice
+
+    it("should return the office number from the object", () => {
+
+        const manager = new Manager("Archie", "123", "archie@workplace.com", "301");
+        expect(manager.officeNumber).toBe("301");
+    });
     // test getRole
 });
 

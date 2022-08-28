@@ -34,8 +34,24 @@ describe("Employee", () => {
     });
 
     // test get name
+    it("should return the name from the object", () => {
+
+        const employee = new Employee("Archie", "123", "archie@workplace.com");
+        expect(employee.name).toBe("Archie");
+    });
     // test get id
+    it("should return the id from the object", () => {
+
+        const employee = new Employee("Archie", "123", "archie@workplace.com");
+        expect(employee.id).toBe("123");
+    });
     // test get email
+    it("should return the email from the object", () => {
+
+        const employee = new Employee("Archie", "123", "archie@workplace.com");
+        expect(employee.email).toBe("archie@workplace.com");
+    });
     // test get role
+
 });
 
