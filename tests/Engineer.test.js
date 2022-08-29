@@ -1,6 +1,7 @@
 // TODO: Smile. You are enough.
 
 const Engineer = require("../lib/Engineer");
+const engineer = new Engineer("Archie", "123", "archie@workplace.com", "archibald");
 
 describe("Engineer", () => {
 
@@ -16,8 +17,11 @@ describe("Engineer", () => {
     // test getGithub
     it("should return the github username from the object", () => {
 
-        const engineer = new Engineer("Archie", "123", "archie@workplace.com", "archibald");
         expect(engineer.github).toBe("archibald");
     });
     // test getRole
+    it("should return the role Engineer", () => {
+
+        expect(engineer.getRole()).toBe("Engineer");
+    })
 });

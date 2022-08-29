@@ -20,23 +20,18 @@
 
     </header>
     <main id="pageMain">
-        <section id="cards d.flex">
+        <section id="cards" class="d-flex flex-row flex-wrap">
             <div class="card" style="width: 18rem;">
-                <div class="card-body">
+                <div class="card-header">
                     <h5 class="card-title">${employee.name}</h5>
-                    <h6 class="card-subtitle mb-2 text-muted">${employee.role}</h6>
-
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item"><a href="mailto:${employee.email}" target="_">${employee.email}</a>
-                        </li>
-                        <li class="list-group-item">${employee.id}</li>
-                        <li class="list-group-item">${getProp(employee)}</li>
-                    </ul>
-
-                    <!-- <p class="card-text"><a href="mailto:${employee.email}" target="_">${employee.email}</a></p>
-                    <p class="card-text">ID: ${employee.id}</p>
-                    <p class="card-text">${getProp(employee)}</p> -->
+                    <h6 class="card-subtitle mb-2 text-white">${employee.role}</h6>
                 </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item"><a href="mailto:${employee.email}" target="_">${employee.email}</a>
+                    </li>
+                    <li class="list-group-item">${employee.id}</li>
+                    <li class="list-group-item">${getProp(employee)}</li>
+                </ul>
             </div>
         </section>
         </div>

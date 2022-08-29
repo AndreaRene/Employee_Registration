@@ -11,25 +11,25 @@ function getProp(employee) {
 };
 
 function cardLoop(teamMembers) {
-    var temp = "";
+    var card = "";
     for (const employee of teamMembers) {
-        temp += generateCards(employee);
+        card += generateCards(employee);
     };
-    return temp;
+    return card;
 };
 
 function generateCards(employee) {
-    return `<div class="card" style="width: 15rem;">
-    <div class="card-body">
+    return `<div class="card" style="width: 18rem;">
+    <div class="card-header">
         <h5 class="card-title">${employee.name}</h5>
         <h6 class="card-subtitle mb-2 text-muted">${employee.role}</h6>
-        <ul class="list-group list-group-flush">
-        <li class="list-group-item">Email: <a href="mailto:${employee.email}" target="_">${employee.email}</a>
+    </div>
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item"><a href="mailto:${employee.email}" target="_">${employee.email}</a>
         </li>
-        <li class="list-group-item">EID: ${employee.id}</li>
+        <li class="list-group-item">${employee.id}</li>
         <li class="list-group-item">${getProp(employee)}</li>
     </ul>
-    </div>
 </div>`;
 };
 
@@ -58,7 +58,7 @@ function generateHTML(teamMembers) {
                                     </header>
 
                                     <main id="pageMain">
-                                        <section id="cards d.flex">
+                                    <section id="cards" class="d-flex flex-row flex-wrap">
                                             ${cardLoop(teamMembers)}
                                         </section>
                                     </main>

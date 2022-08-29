@@ -1,6 +1,7 @@
 // TODO: Smile. You are enough.
 
 const Intern = require("../lib/Intern");
+const intern = new Intern("Archie", "123", "archie@workplace.com", "Learning Place");
 
 describe("Intern", () => {
 
@@ -16,8 +17,11 @@ describe("Intern", () => {
     //test getSchool
     it("should return the school from the object", () => {
 
-        const intern = new Intern("Archie", "123", "archie@workplace.com", "Learning Place");
         expect(intern.school).toBe("Learning Place");
     });
     // test getRole
+    it("should return the role Intern", () => {
+
+        expect(intern.getRole()).toBe("Intern");
+    })
 })
