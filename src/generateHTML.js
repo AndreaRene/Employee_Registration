@@ -1,3 +1,4 @@
+// TODO: Smile. You are enough.
 
 function getProp(employee) {
     if (employee.role === "Manager") {
@@ -24,10 +25,10 @@ function generateCards(employee) {
         <h6 class="card-subtitle mb-2 text-light">${employee.role}</h6>
     </div>
     <ul class="list-group list-group-flush m-3">
-        <li class="list-group-item">Email: <a href="mailto:${employee.email}" target="_">${employee.email}</a>
+        <li class="list-group-item" style="background-color: rgb(94, 97, 112);>Email: <a href="mailto:${employee.email}" target="_">${employee.email}</a>
         </li>
-        <li class="list-group-item">EID: ${employee.id}</li>
-        <li class="list-group-item">${getProp(employee)}</li>
+        <li class="list-group-item" style="background-color: rgb(94, 97, 112);>EID: ${employee.id}</li>
+        <li class="list-group-item" style="background-color: rgb(94, 97, 112);>${getProp(employee)}</li>
     </ul>
 </div>`;
 };
@@ -46,11 +47,12 @@ function generateHTML(teamMembers) {
                 integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
                 crossorigin="anonymous"></script>
             <link rel="stylesheet" href="style.css">
+            <!-- TODO: Smile. You are enough. -->
                                     <title>${teamMembers[0].name}'s Team</title>
                                 </head>
 
-                                <body>
-                                    <header id="pageHeader" class="text-warning bg-dark p-3 text-center">
+                                <body style="background-color: rgb(148, 148, 148);">
+                                    <header id="pageHeader" class="text-warning bg-dark p-3 text-center position-fixed">
                                         <h1>${teamMembers[0].name}'s Team</h1>
                                     </header>
 
@@ -60,9 +62,10 @@ function generateHTML(teamMembers) {
                                         </section>
                                     </main>
 
-                                    <footer id="pageFooter" class="text-warning bg-dark p-3 text-center position-absolute bottom-0 w-100">
-
-                                    </footer>
+                                    <footer id="pageFooter" class="text-warning bg-dark p-3 text-center position-fixed bottom-0 w-100">
+                                    <h5>Made with ☕ and JavaScript</h5>
+                                    <h6>(But Mostly Coffee)</h6>
+                                </footer>
                                 </body>
 
                             </html>`;
