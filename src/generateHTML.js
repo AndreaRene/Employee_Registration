@@ -1,6 +1,5 @@
 
 function getProp(employee) {
-    console.log(employee, "from GETPROP");
     if (employee.role === "Manager") {
         return `Office: ${employee.officeNumber}`;
     } else if (employee.role === "Engineer") {
@@ -19,12 +18,12 @@ function cardLoop(teamMembers) {
 };
 
 function generateCards(employee) {
-    return `<div class="card" style="width: 18rem;">
-    <div class="card-header">
-        <h5 class="card-title">${employee.name}</h5>
-        <h6 class="card-subtitle mb-2 text-muted">${employee.role}</h6>
+    return `<div class="card m-3" style="width: 18rem;">
+    <div class="card-header text-warning bg-dark p-3">
+        <h5 class="card-title border-bottom">${employee.name}</h5>
+        <h6 class="card-subtitle mb-2 text-light">${employee.role}</h6>
     </div>
-    <ul class="list-group list-group-flush">
+    <ul class="list-group list-group-flush m-3">
         <li class="list-group-item"><a href="mailto:${employee.email}" target="_">${employee.email}</a>
         </li>
         <li class="list-group-item">${employee.id}</li>
@@ -34,7 +33,6 @@ function generateCards(employee) {
 };
 
 function generateHTML(teamMembers) {
-    console.log(teamMembers, "from GENERATEHTML");
     return `<!DOCTYPE html>
         <html lang="en">
 
@@ -47,8 +45,7 @@ function generateHTML(teamMembers) {
             <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
                 integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
                 crossorigin="anonymous"></script>
-            <link rel="stylesheet" src="/dist/reset.css">
-            <link rel="stylesheet" src="/dist/style.css">
+            <link rel="stylesheet" href="/dist/style.css">
                                     <title>${teamMembers[0].name}'s Team</title>
                                 </head>
 
@@ -58,7 +55,7 @@ function generateHTML(teamMembers) {
                                     </header>
 
                                     <main id="pageMain">
-                                    <section id="cards" class="d-flex flex-row flex-wrap">
+                                    <section id="cards" class="d-flex flex-row flex-wrap justify-content-evenly">
                                             ${cardLoop(teamMembers)}
                                         </section>
                                     </main>

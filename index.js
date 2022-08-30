@@ -19,12 +19,14 @@ const employeeQuestions = (selectData) => {
         {
             type: "input",
             name: "name",
-            message: "Please input the employee's name:"
+            message: "Please input the employee's name:",
+            validate: val => /[a-z][^1-9]/i.test(val),
         },
         {
             type: "input",
             name: "EID",
-            message: "Please enter the employee ID number:"
+            message: "Please enter the employee ID number:",
+            validate: val => /[1-9]/.test(val),
         },
         {
             type: "input",
@@ -47,7 +49,8 @@ const managerQuestions = (employeeData) => {
         {
             type: "input",
             name: "managerOffice",
-            message: "Please input the manager's office number:"
+            message: "Please input the manager's office number:",
+            validate: val => /[1-9]/.test(val),
         },
     ]).then((managerData) => {
         const manager = new Manager(employeeData.name, employeeData.EID, employeeData.email, managerData.managerOffice);
@@ -62,7 +65,8 @@ const engineerQuestions = (employeeData) => {
         {
             type: "input",
             name: "github",
-            message: "Please input the engineer's github username:"
+            message: "Please input the engineer's github username:",
+            validate: val => /^[a-z\d](?:[a-z\d]|-(?=[a-z\d])){0,38}$/i.test(val),
         },
     ]).then((engineerData) => {
         const engineer = new Engineer(employeeData.name, employeeData.EID, employeeData.email, engineerData.github);
@@ -77,7 +81,8 @@ const internQuestions = (employeeData) => {
         {
             type: "input",
             name: "school",
-            message: "Please input the intern's school name:"
+            message: "Please input the intern's school name:",
+            validate: val => /[a-z]/i.test(val),
         },
     ]).then((internData) => {
         const intern = new Intern(employeeData.name, employeeData.EID, employeeData.email, internData.school);
@@ -100,7 +105,6 @@ const select = () => {
         } else {
             const newHTML = generateHTML(teamMembers);
             createFile(newHTML);
-            console.log(teamMembers, "From INDEX Queries");
         };
     });
 };
