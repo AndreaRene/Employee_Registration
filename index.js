@@ -20,18 +20,20 @@ const employeeQuestions = (selectData) => {
             type: "input",
             name: "name",
             message: "Please input the employee's name:",
-            validate: val => /[a-z][^1-9]/i.test(val),
+            validate: val => /^[a-z]/i.test(val),
         },
         {
             type: "input",
             name: "EID",
             message: "Please enter the employee ID number:",
-            validate: val => /[1-9]/.test(val),
+            validate: val => /^[1-9]/.test(val),
         },
         {
             type: "input",
             name: "email",
-            message: "Please enter the employee's email address:"
+            message: "Please enter the employee's email address:",
+            validate: email => /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)
+
         },
     ]).then((employeeData) => {
         if (teamMembers.length === 0) {
@@ -50,7 +52,7 @@ const managerQuestions = (employeeData) => {
             type: "input",
             name: "managerOffice",
             message: "Please input the manager's office number:",
-            validate: val => /[1-9]/.test(val),
+            validate: val => /^[1-9]/.test(val),
         },
     ]).then((managerData) => {
         const manager = new Manager(employeeData.name, employeeData.EID, employeeData.email, managerData.managerOffice);
@@ -82,7 +84,7 @@ const internQuestions = (employeeData) => {
             type: "input",
             name: "school",
             message: "Please input the intern's school name:",
-            validate: val => /[a-z]/i.test(val),
+            validate: val => /^[a-z]/i.test(val),
         },
     ]).then((internData) => {
         const intern = new Intern(employeeData.name, employeeData.EID, employeeData.email, internData.school);
@@ -110,7 +112,7 @@ const select = () => {
 };
 
 const createFile = (newHTML) => {
-    writeFile("team.html", newHTML);
+    writeFile(`dist/${teamMembers[0].name}'s-team.html`, newHTML);
 }
 
 employeeQuestions();

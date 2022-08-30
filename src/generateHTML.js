@@ -24,9 +24,9 @@ function generateCards(employee) {
         <h6 class="card-subtitle mb-2 text-light">${employee.role}</h6>
     </div>
     <ul class="list-group list-group-flush m-3">
-        <li class="list-group-item"><a href="mailto:${employee.email}" target="_">${employee.email}</a>
+        <li class="list-group-item">Email: <a href="mailto:${employee.email}" target="_">${employee.email}</a>
         </li>
-        <li class="list-group-item">${employee.id}</li>
+        <li class="list-group-item">EID: ${employee.id}</li>
         <li class="list-group-item">${getProp(employee)}</li>
     </ul>
 </div>`;
@@ -45,12 +45,12 @@ function generateHTML(teamMembers) {
             <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
                 integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
                 crossorigin="anonymous"></script>
-            <link rel="stylesheet" href="/dist/style.css">
+            <link rel="stylesheet" href="style.css">
                                     <title>${teamMembers[0].name}'s Team</title>
                                 </head>
 
                                 <body>
-                                    <header id="pageHeader">
+                                    <header id="pageHeader" class="text-warning bg-dark p-3 text-center">
                                         <h1>${teamMembers[0].name}'s Team</h1>
                                     </header>
 
@@ -60,12 +60,12 @@ function generateHTML(teamMembers) {
                                         </section>
                                     </main>
 
-                                    <footer id="pageFooter">
+                                    <footer id="pageFooter" class="text-warning bg-dark p-3 text-center position-absolute bottom-0 w-100">
 
                                     </footer>
                                 </body>
 
-                            </html> `;
+                            </html>`;
 
 }
 
