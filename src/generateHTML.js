@@ -19,7 +19,7 @@ function cardLoop(teamMembers) {
 };
 
 function generateCards(employee) {
-    return `<div class="card m-3" style="width: 18rem; background-color:#ffc107;">
+    return `<div class="card m-3 shadow-lg" style="width: 18rem; background-color:#ffc107;">
     <div class="card-header text-warning bg-dark p-3">
         <h5 class="card-title border-bottom">${employee.name}</h5>
         <h6 class="card-subtitle mb-2 text-light">${employee.role}</h6>

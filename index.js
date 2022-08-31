@@ -12,26 +12,26 @@ const teamMembers = [];
 
 const employeeQuestions = (selectData) => {
     if (teamMembers.length === 0) {
-        console.log(("Please enter information about your team members below") + chalk.green(" starting with the manager."));
+        console.log(chalk.black.bgMagenta("Please enter information about your team members below starting with the manager."));
     };
 
     inquirer.prompt([
         {
             type: "input",
             name: "name",
-            message: "Please input the employee's name:",
+            message: chalk.magenta("Please input the employee's name:"),
             validate: val => /^[a-z]/i.test(val),
         },
         {
             type: "input",
             name: "EID",
-            message: "Please enter the employee ID number:",
+            message: chalk.magenta("Please enter the employee ID number:"),
             validate: val => /^[1-9]/.test(val),
         },
         {
             type: "input",
             name: "email",
-            message: "Please enter the employee's email address:",
+            message: chalk.magenta("Please enter the employee's email address:"),
             validate: email => /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)
 
         },
@@ -51,7 +51,7 @@ const managerQuestions = (employeeData) => {
         {
             type: "input",
             name: "managerOffice",
-            message: "Please input the manager's office number:",
+            message: chalk.magenta("Please input the manager's office number:"),
             validate: val => /^[1-9]/.test(val),
         },
     ]).then((managerData) => {
@@ -67,7 +67,7 @@ const engineerQuestions = (employeeData) => {
         {
             type: "input",
             name: "github",
-            message: "Please input the engineer's github username:",
+            message: chalk.magenta("Please input the engineer's github username:"),
             validate: val => /^[a-z\d](?:[a-z\d]|-(?=[a-z\d])){0,38}$/i.test(val),
         },
     ]).then((engineerData) => {
@@ -83,7 +83,7 @@ const internQuestions = (employeeData) => {
         {
             type: "input",
             name: "school",
-            message: "Please input the intern's school name:",
+            message: chalk.magenta("Please input the intern's school name:"),
             validate: val => /^[a-z]/i.test(val),
         },
     ]).then((internData) => {
@@ -113,6 +113,7 @@ const select = () => {
 
 const createFile = (newHTML) => {
     writeFile(`dist/${teamMembers[0].name}-team-profile.html`, newHTML);
+    console.log(chalk.black.bgMagenta("File Successfully Written"))
 }
 
 employeeQuestions();
