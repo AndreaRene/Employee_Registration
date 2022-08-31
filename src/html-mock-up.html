@@ -21,7 +21,7 @@
     </header>
 
     <main id="pageMain">
-        <section id="cards" class="d-flex flex-row flex-wrap justify-content-evenly overflow-hidden">
+        <section id="cards" class="d-flex flex-row flex-wrap justify-content-evenly">
             <div class="card m-3" style="width: 18rem; background-color:#ffc107;">
                 <div class="card-header text-warning bg-dark p-3">
                     <h5 class="card-title border-bottom">${employee.name}</h5>
@@ -29,7 +29,7 @@
                 </div>
                 <ul class="list-group list-group-flush m-3">
                     <li class="list-group-item" style="background-color: #5e6170;">Email: <a
-                            href="mailto:${employee.email}" target="_">${employee.email}</a>
+                            href="mailto:${employee.email}" target="_" class="text-light">${employee.email}</a>
                     </li>
                     <li class="list-group-item" style="background-color: #5e6170;">EID: ${employee.id}</li>
                     <li class="list-group-item" style="background-color: #5e6170;">${getProp(employee)}</li>

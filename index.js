@@ -112,7 +112,7 @@ const select = () => {
 };
 
 const createFile = (newHTML) => {
-    writeFile(`dist/${teamMembers[0].name}'s-team.html`, newHTML);
+    writeFile(`dist/${teamMembers[0].name}-team-profile.html`, newHTML);
 }
 
 employeeQuestions();

@@ -2,11 +2,11 @@
 
 function getProp(employee) {
     if (employee.role === "Manager") {
-        return `Office: ${employee.officeNumber}`;
+        return `Office: <span class="text-light">${employee.officeNumber}</span>`;
     } else if (employee.role === "Engineer") {
-        return `Github: <a href="https://github.com/${employee.github}">${employee.github}</a>`;
+        return `Github: <a href="https://github.com/${employee.github}" class="text-light">${employee.github}</a>`;
     } else {
-        return `School: ${employee.school}`;
+        return `School: <span class="text-light">${employee.school}</span>`;
     };
 };
 
@@ -26,9 +26,9 @@ function generateCards(employee) {
     </div>
     <ul class="list-group list-group-flush m-3">
         <li class="list-group-item" style="background-color: #5e6170;">Email: <a
-                href="mailto:${employee.email}" target="_">${employee.email}</a>
+                href="mailto:${employee.email}" target="_" class="text-light">${employee.email}</a>
         </li>
-        <li class="list-group-item" style="background-color: #5e6170;">EID: ${employee.id}</li>
+        <li class="list-group-item" style="background-color: #5e6170;">EID: <span class="text-light">${employee.id}</span></li>
         <li class="list-group-item" style="background-color: #5e6170;">${getProp(employee)}</li>
     </ul>
 </div>`;
@@ -58,7 +58,7 @@ function generateHTML(teamMembers) {
     </header>
 
     <main id="pageMain">
-        <section id="cards" class="d-flex flex-row flex-wrap justify-content-evenly overflow-hidden">
+        <section id="cards" class="d-flex flex-row flex-wrap justify-content-evenly">
                                             ${cardLoop(teamMembers)}
                                         </section>
                                     </main>
