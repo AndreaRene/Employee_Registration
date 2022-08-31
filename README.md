@@ -6,7 +6,7 @@ When the user selects "Finish" the file will be written and saved with a unique 
 
 I have included several sample files created using this generator. You can find them in the [dist](/dist/) folder.
 
-You can find the walkthrough video [here]() 
+You can find the walkthrough video [here](https://drive.google.com/file/d/19wUKvFf-UM1UpRmvmujzrjusQUalLxqe/view) 
   
 This application was designed it to meet the following criteria:
 
