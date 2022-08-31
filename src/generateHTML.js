@@ -19,16 +19,17 @@ function cardLoop(teamMembers) {
 };
 
 function generateCards(employee) {
-    return `<div class="card m-3" style="width: 18rem;">
+    return `<div class="card m-3" style="width: 18rem; background-color:#ffc107;">
     <div class="card-header text-warning bg-dark p-3">
         <h5 class="card-title border-bottom">${employee.name}</h5>
         <h6 class="card-subtitle mb-2 text-light">${employee.role}</h6>
     </div>
     <ul class="list-group list-group-flush m-3">
-        <li class="list-group-item" style="background-color: rgb(94, 97, 112);>Email: <a href="mailto:${employee.email}" target="_">${employee.email}</a>
+        <li class="list-group-item" style="background-color: #5e6170;">Email: <a
+                href="mailto:${employee.email}" target="_">${employee.email}</a>
         </li>
-        <li class="list-group-item" style="background-color: rgb(94, 97, 112);>EID: ${employee.id}</li>
-        <li class="list-group-item" style="background-color: rgb(94, 97, 112);>${getProp(employee)}</li>
+        <li class="list-group-item" style="background-color: #5e6170;">EID: ${employee.id}</li>
+        <li class="list-group-item" style="background-color: #5e6170;">${getProp(employee)}</li>
     </ul>
 </div>`;
 };
@@ -51,13 +52,13 @@ function generateHTML(teamMembers) {
                                     <title>${teamMembers[0].name}'s Team</title>
                                 </head>
 
-                                <body style="background-color: rgb(148, 148, 148);">
-                                    <header id="pageHeader" class="text-warning bg-dark p-3 text-center position-fixed">
-                                        <h1>${teamMembers[0].name}'s Team</h1>
-                                    </header>
+                                <body style="background-color: #949494; padding-top: 6rem; padding-bottom: 6rem;">
+    <header id="pageHeader" class="text-warning bg-dark p-3 text-center position-fixed top-0 w-100" style="z-index: 1;">
+        <h1>${teamMembers[0].name}'s Team</h1>
+    </header>
 
-                                    <main id="pageMain">
-                                    <section id="cards" class="d-flex flex-row flex-wrap justify-content-evenly">
+    <main id="pageMain">
+        <section id="cards" class="d-flex flex-row flex-wrap justify-content-evenly overflow-hidden">
                                             ${cardLoop(teamMembers)}
                                         </section>
                                     </main>
