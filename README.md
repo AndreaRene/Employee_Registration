@@ -1,4 +1,4 @@
-# Trivia on the rocks
+# Team Profile Creator
 
 This command line application will allow a user to generate a team profile by answering a series of questions in the terminal. The user will be prompted to enter information about the team manager first. Then the user will have a choice to add an engineer, add an intern, or finish(write the file). After each employee added, the user will then be given the same options.
 
